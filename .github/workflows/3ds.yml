@@ -1,4 +1,4 @@
-name: Build 3DSX and CIA
+name: Build CIA
 
 # Controls when the workflow will run
 on:
@@ -27,22 +27,33 @@ jobs:
       - name: Install Dependencies
         run: sudo dkp-pacman -S 3ds-libtheora 3ds-sdl libctru 3ds-dev
         
-      - name: Build
+      - name: Build ELF and 3DSX
         run: |
+          git clone https://github.com/Rubberduckycooly/Sonic-Mania-Decompilation
+          rm Game
+          cd Sonic-Mania-Decompilation
+          mv SonicMania ../RSDKv5-Decompilation/Game
+          cd ..
+          rm -rf Sonic-Mania-Decompilation
           export DEVKITPRO=/opt/devkitpro
           export DEVKITARM=$DEVKITPRO/devkitARM
           make PLATFORM=3DS
           echo Build done.   
           
+      - name: Package CIA
+        run: |
+          cd 3ds
+          sudo ./build_cia.sh
+          
       # Setup artifact folder
       - name: Setup artifact folder
         run: |
           mkdir artifacts
-          cp osi_basic-master/ROM.BIN artifacts/
+          cp bin/3DS/CTR/SonicMania.cia artifacts/
   
       # Publish Artifacts
       - name: Publish Artifacts
         uses: actions/upload-artifact@v2
         with: 
-          name: xpl32_rom
+          name: sonicmania-cia
           path: artifacts
