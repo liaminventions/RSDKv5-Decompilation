@@ -7,6 +7,9 @@ mkdir -p ../bin/3DS/CTR/out &&
 rm -rf ../bin/3DS/CTR/out/*
 rm -rf ../bin/3DS/CTR/SonicMania.cia
 
+chmod +x bannertool
+chmod +x makerom
+
 # make banner
 ./bannertool makebanner -i ./banner.png -a ./jingle.wav -o ../bin/3DS/CTR/out/banner.bnr &&
 
@@ -17,5 +20,6 @@ rm -rf ../bin/3DS/CTR/SonicMania.cia
 ./makerom -f cia -o ../bin/3DS/CTR/SonicMania.cia -DAPP_ENCRYPTED=false -elf ../bin/3DS/CTR/RSDKv5.elf -rsf ./SonicMania.rsf -exefslogo -target t -icon ../bin/3DS/CTR/out/icon.icn -banner ../bin/3DS/CTR/out/banner.bnr &&
 
 echo "Built .cia"
+echo "Binaries are in bin/3DS/CTR."
 
 rm -rf ../bin/3DS/CTR/out
