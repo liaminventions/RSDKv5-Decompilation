@@ -2,7 +2,7 @@
 
 ***This guide is for Linux only.*** If you are running Windows, please install Windows Subsystem for Linux and use that for this guide.
 ***WARNING!*** The Sonic-Mania_Decompilation repo *must* be used at [
-commit 4ef5437]([https://link-url-here.org](https://github.com/Rubberduckycooly/Sonic-Mania-Decompilation/commit/4ef543749a29f17ce904217140c8bbff6eea3e77 )) until bugs are fixed there.
+commit 4ef5437](https://link-url-here.org](https://github.com/Rubberduckycooly/Sonic-Mania-Decompilation/commit/4ef543749a29f17ce904217140c8bbff6eea3e77 ) until bugs are fixed there.
 
 ## Instructions
 
