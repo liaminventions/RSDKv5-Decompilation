@@ -28,6 +28,7 @@ jobs:
           rm Game
           cd Sonic-Mania-Decompilation
           git checkout 4ef5437
+          cd ..
           mv Sonic-Mania-Decompilation/SonicMania Game
           rm -rf Sonic-Mania-Decompilation
           cd dependencies/all/
