@@ -26,6 +26,8 @@ jobs:
         run: |
           git clone https://github.com/Rubberduckycooly/Sonic-Mania-Decompilation
           rm Game
+          cd Sonic-Mania-Decompilation
+          git checkout 4ef5437
           mv Sonic-Mania-Decompilation/SonicMania Game
           rm -rf Sonic-Mania-Decompilation
           cd dependencies/all/
