@@ -4,7 +4,7 @@ git checkout 4ef5437
 cd ..
 #git clone https://github.com/SaturnSH2x2/RSDKv5-Decompilation --recursive
 #cd RSDKv5-Decompilation
-#git checkout 3ds-main
+git checkout 3ds-main
 rm  Game
 cd ../Sonic-Mania-Decompilation
 mv SonicMania ../RSDKv5-Decompilation/Game
